@@ -45,7 +45,7 @@
                             </div>
                             <div class="header__col header__right">
                                 <div class="toolbar-item d-none d-lg-block">
-                                    <a href="login-register.html" class="toolbar-btn">
+                                    <a href="memberLoginForm.do" class="toolbar-btn">
                                         <span>Login</span>
                                     </a>
                                 </div>
