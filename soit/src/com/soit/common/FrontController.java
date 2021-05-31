@@ -9,6 +9,12 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.soit.member.web.MemberJoin;
+import com.soit.member.web.MemberJoinForm;
+import com.soit.member.web.MemberLogin;
+import com.soit.member.web.MemberLoginForm;
+import com.soit.member.web.MemberLoginOut;
+
 public class FrontController extends HttpServlet {
 	private HashMap<String, DBCommand> map = new HashMap<>();
 
@@ -17,6 +23,13 @@ public class FrontController extends HttpServlet {
 		// 요청페이지, 실행 컨트롤...
 		map.put("/index.do", new IndexPage());
 		map.put("/main.do", new MainPage());
+
+		// 맴버...
+		map.put("/memberJoinForm.do", new MemberJoinForm());
+		map.put("/memberJoin.do", new MemberJoin());
+		map.put("/memberLoginForm.do", new MemberLoginForm());
+		map.put("/memberLogin.do", new MemberLogin());
+		map.put("/memberLoginOut.do", new MemberLoginOut());
 	}
 
 	@Override

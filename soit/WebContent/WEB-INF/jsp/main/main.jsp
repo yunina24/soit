@@ -7,6 +7,6 @@
 <title>main.jsp</title>
 </head>
 <body>
-	<h3>메인페이지!</h3>
+	<h3>메인페이지! 죽이겠다</h3>
 </body>
 </html>
