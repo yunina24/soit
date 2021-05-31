@@ -8,12 +8,11 @@
   <title>JEWELRY</title>
   <!-- include the site stylesheet -->
   <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:700' rel='stylesheet' type='text/css'>
   <!-- include the site stylesheet -->
   <link rel="stylesheet" href="css/bootstrap.css">
   <!-- include the site stylesheet -->
   <link rel="stylesheet" href="css/fonts.css">
-  <!-- include the site stylesheet -->
-  <link rel="stylesheet" href="css/slick.css">
   <!-- include the site stylesheet -->
   <link rel="stylesheet" href="css/animate.css">
   <!-- include the site stylesheet -->
@@ -44,14 +43,14 @@
               <!-- nav of the page -->
               <nav id="nav">
                 <ul class="list-unstyled">
-                  <li class="active">
+                  <li>
                     <a href="#">home</a>
                     <ul class="list-unstyled drop">
                       <li><a href="index.html">Home 1</a></li>
                       <li><a href="home.html">Home 2</a></li>
                     </ul>
                   </li>
-                  <li class="mega-drop">
+                  <li class="active mega-drop">
                     <a href="#">shop</a>
                     <div class="drop-holder">
                       <div class="coll">
@@ -99,6 +98,7 @@
                 </ul>
               </nav>
               <div class="align-right">
+                <!-- social-networks of the page -->
                 <ul class="list-unstyled icon-list">
                   <li>
                     <a href="#"><img src="images/user.png" alt="images description"></a>
@@ -170,70 +170,82 @@
     </div>
     <!-- contain main informative part of the site -->
     <main id="main" role="main">
-      <!-- main-gallery of the Page -->
-      <section class="main-slider">
-        <!-- social-networks of the page -->
-        <ul class="list-unstyled social-network">
-          <li class="facebook"><a href="#" class="icon-facebook"></a></li>
-          <li><a href="#" class="icon-twitter"></a></li>
-          <li class="instagram"><a href="#" class="icon-instagram"></a></li>
-        </ul>
-        <!-- Main Slider of the page -->
-        <div id="main-slider">
-          <!-- Slide of the page -->
-          <div class="slide">
-            <div class="container">
-              <div class="row">
-                <div class="col-xs-12">
-                  <div class="beans-slider">
-                    <div class="border">
-                      <h1 class="slider-heading">Back to dream</h1>
-                      <div class="img-holder">
-                        <img src="http://placehold.it/440x660" alt="image description">
-                      </div>
-                    </div>
-                  </div>
+      <!-- main-banner of the page -->
+      <section class="banner" style="background-image: url(http://placehold.it/1920x1000);">
+        <span class="sale-percent">SALE OF 50%</span>
+        <div class="container">
+          <div class="row">
+            <div class="col-xs-12">
+                <div class="caption">
+                  <h1 class="main-heading heading-1">Login</h1>
+                  <ul class="list-unstyled breadcrumbs">
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="category-page.html">shop</a></li>
+                    <li>login</li>
+                  </ul>
                 </div>
-              </div>
-            </div>
-          </div>
-          <!-- Slide of the page -->
-          <div class="slide">
-            <div class="container">
-              <div class="row">
-                <div class="col-xs-12">
-                  <div class="beans-slider">
-                    <div class="border">
-                      <h1 class="slider-heading">Back to dream</h1>
-                      <div class="img-holder">
-                        <img src="http://placehold.it/440x660" alt="image description">
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- Slide of the page -->
-          <div class="slide">
-            <div class="container">
-              <div class="row">
-                <div class="col-xs-12">
-                  <div class="beans-slider">
-                    <div class="border">
-                      <h1 class="slider-heading">Back to dream</h1>
-                      <div class="img-holder">
-                        <img src="http://placehold.it/440x660" alt="image description">
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
             </div>
           </div>
         </div>
+        <span class="year">TRENDS FOR 2016</span>
+      </section>
+      <!-- form-section of the page -->
+      <section class="form-sec">
+        <form action="#" class="contact-form">
+          <fieldset>
+            <div class="form-group">
+              <input type="email" class="form-control" placeholder="Email">
+            </div>
+            <div class="form-group">
+              <input type="password" class="form-control" placeholder="Password">
+            </div>
+            <div class="form-group">
+              <a href="#">Forget Password</a>
+              <button class="btn-primary btn-login" type="submit">Login</button>
+            </div>
+          </fieldset>
+        </form>
       </section>
     </main>
+    <!-- footer of the Page -->
+    <footer id="footer" class="wow fadeInUp" data-wow-delay="0.4s">
+      <span class="free-ship">FREE SHIPPING</span>
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-12 col-sm-4 col-lg-4 txt-holder">
+            <div class="footer-logo">
+              <a href="index.html">jewelry</a>
+            </div>
+            <p>Pharetra, erat sed fermentum<br> feugiat, velit mauris egestas<br> quam. </p>
+          </div>
+          <div class="col-xs-12 col-sm-4 col-lg-3">
+            <h3>contact us</h3>
+            <!-- Contact of the page -->
+            <ul class="list-unstyled contact-info">
+              <li><i class="icon icon-location"></i><address>Limited. 222-UTC , EU .</address></li>
+              <li><i class="icon icon-email"></i><a class="txt" href="#">upport@emtheme.com</a></li>
+              <li><i class="icon icon-phone"></i><a class="txt" href="#">(00)-213 1234567</a></li>
+              <li><i class="icon icon-printer"></i><a class="txt" href="#">(00)-213 1879017</a></li>
+            </ul>
+          </div>
+          <div class="col-xs-12 col-sm-4 col-lg-5">
+            <h3>intagram feed</h3>
+            <!-- Instagram of the page -->
+            <ul class="list-unstyled instagram-list">
+              <li><a href="#"><img src="http://placehold.it/95x70" alt="image description"></a></li>
+              <li><a href="#"><img src="http://placehold.it/95x70" alt="image description"></a></li>
+              <li><a href="#"><img src="http://placehold.it/95x70" alt="image description"></a></li>
+              <li><a href="#"><img src="http://placehold.it/95x70" alt="image description"></a></li>
+              <li><a href="#"><img src="http://placehold.it/95x70" alt="image description"></a></li>
+              <li><a href="#"><img src="http://placehold.it/95x70" alt="image description"></a></li>
+              <li><a href="#"><img src="http://placehold.it/95x70" alt="image description"></a></li>
+              <li><a href="#"><img src="http://placehold.it/95x70" alt="image description"></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <span class="support">24H SUPPORT</span>
+    </footer>
     <!-- Back Top of the page -->
     <span id="back-top" class="arrow_carrot-up"></span>
   </div>
