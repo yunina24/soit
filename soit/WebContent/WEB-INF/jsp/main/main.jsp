@@ -7,6 +7,6 @@
 <title>main.jsp</title>
 </head>
 <body>
-	<h3>메인페이지! 죽이겠다</h3>
+	<img src="${pageContext.request.contextPath }/bootstrap/assets/img/banner/bannerImage2.jpg" width="100%";>
 </body>
 </html>
