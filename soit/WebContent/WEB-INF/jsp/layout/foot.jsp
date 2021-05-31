@@ -7,6 +7,6 @@
 <title>foot.jsp</title>
 </head>
 <body>
-
+footer
 </body>
 </html>
