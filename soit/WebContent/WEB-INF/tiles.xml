@@ -5,7 +5,7 @@
 
 <tiles-definitions>
 	<definition name="home" template="/WEB-INF/jsp/layout/template2.jsp">
-		<put-attribute name="title" value="Welcome to soit!!" />
+		<put-attribute name="title" value="so-it!" />
 		<put-attribute name="head" value="/WEB-INF/jsp/layout/head.jsp" />
 		<put-attribute name="menu" value="/WEB-INF/jsp/layout/menu.jsp" />
 		<put-attribute name="body" value="/WEB-INF/jsp/layout/home.jsp" />
