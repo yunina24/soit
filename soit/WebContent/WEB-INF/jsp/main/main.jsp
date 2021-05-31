@@ -4,9 +4,9 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Index.jsp</title>
+<title>main.jsp</title>
 </head>
 <body>
-	<jsp:forward page="main.do"></jsp:forward>
+	<h3>메인페이지!</h3>
 </body>
 </html>
