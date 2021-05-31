@@ -17,6 +17,7 @@ public class DAO {
 			conn = DriverManager.getConnection(url, user, passwd);
 		} catch (SQLException | ClassNotFoundException e) {
 			e.printStackTrace();
+			System.out.println(e);
 		}
 	}
 }
