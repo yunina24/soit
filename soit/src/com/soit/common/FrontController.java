@@ -14,6 +14,8 @@ import com.soit.member.web.MemberJoinForm;
 import com.soit.member.web.MemberLogin;
 import com.soit.member.web.MemberLoginForm;
 import com.soit.member.web.MemberLoginOut;
+import com.soit.notice.web.NoticeList;
+import com.soit.notice.web.NoticeListPaging;
 
 public class FrontController extends HttpServlet {
 	private HashMap<String, DBCommand> map = new HashMap<>();
@@ -21,7 +23,7 @@ public class FrontController extends HttpServlet {
 	@Override
 	public void init() throws ServletException {
 		// 요청페이지, 실행 컨트롤...
-		map.put("/index.do", new IndexPage());
+		//map.put("/index.do", new IndexPage());
 		map.put("/main.do", new MainPage());
 
 		// 맴버...
@@ -30,6 +32,11 @@ public class FrontController extends HttpServlet {
 		map.put("/memberLoginForm.do", new MemberLoginForm());
 		map.put("/memberLogin.do", new MemberLogin());
 		map.put("/memberLoginOut.do", new MemberLoginOut());
+		
+		// 게시판
+		map.put("/noticeList.do", new NoticeList());
+		map.put("/noticeListPaging.do", new NoticeListPaging());
+		
 	}
 
 	@Override

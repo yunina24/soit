@@ -23,11 +23,9 @@ public class NoticeServiceImpl extends DAO implements NoticeService {
 					+ "where b.m between ? and ?";
 
 		List<NoticeVO> list = new ArrayList<>();
-		int firstCnt = 0;
-		int lastCnt = 0;
-
-		firstCnt = (page - 1) * 10 + 1; // 1, 11, 21...
-		lastCnt = (page * 10); // 10, 20, 30...
+		int firstCnt =0, lastCnt = 0;
+		firstCnt = (page-1)*10 +1; // 1
+		lastCnt = (page * 10); //10
 
 		try {
 			psmt = conn.prepareStatement(SQL);
@@ -38,8 +36,8 @@ public class NoticeServiceImpl extends DAO implements NoticeService {
 				NoticeVO vo = new NoticeVO();
 				vo.setBbs_num(rs.getInt("bbs_num"));
 				vo.setTitle(rs.getString("title"));
-				vo.setContent(rs.getString("content"));
-				vo.setWriter(rs.getString("writer"));
+				//vo.setContent(rs.getString("content"));
+				//vo.setWriter(rs.getString("writer"));
 				vo.setUp_date(rs.getDate("up_date"));
 				vo.setHit(rs.getInt("hit"));
 				list.add(vo);
@@ -62,7 +60,6 @@ public class NoticeServiceImpl extends DAO implements NoticeService {
 				NoticeVO vo = new NoticeVO();
 				vo.setBbs_num(rs.getInt("bbs_num"));
 				vo.setTitle(rs.getString("title"));
-				vo.setContent(rs.getString("content"));
 				vo.setWriter(rs.getString("writer"));
 				vo.setUp_date(rs.getDate("up_date"));
 				vo.setHit(rs.getInt("hit"));

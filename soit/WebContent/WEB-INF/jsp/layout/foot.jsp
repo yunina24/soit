@@ -12,60 +12,39 @@
         <footer class="footer bg-color pt--70 pt-xs--60" data-bg-color="#f4f8fa">
             <div class="container">
                 <div class="row border-bottom pb--60 pb-sm--28 pb-xs--49">
+                    <div class="col footer-column-2">
+                        <div class="footer-widget">
+                        	 <img src="${pageContext.request.contextPath }/bootstrap/assets/img/logo/logo.png" alt="Logo">
+                        </div>
+                    </div>
                     <div class="col footer-column-1 mb-sm--42">
-                        <div class="footer-widget">
-							<h2>so-it!</h2> <br>
-							<h5>Address 대구 중구 웅앵웅앵 59-59</h5>
-                        </div>
+						<a>Tel. 053-555-5959 / FAX. 070-555-5959 <br>
+						80, Dalgubeol-daero 447-gil, Jung-gu, Daegu, Republic of Korea</a>
                     </div>
-                    <div class="col footer-column-2 mb-md--33">
-                        <div class="footer-widget">
-                        </div>
-                    </div>
-                    <div class="col footer-column-3 mb-sm--33">
-                        <div class="footer-widget">
-                        </div>
-                    </div>
-                    <div class="col footer-column-4 mb-xs--33">
-                        <div class="footer-widget">
-                        </div>
-                    </div>
+                    
                     <div class="col footer-column-5">
-                        <div class="footer-widget">
-                            <h3 class="widget-title mb--35 mb-sm--15">My Account</h3>
-                            <ul class="footer-menu">
-                                <li>
-                                    <a href="my-account.html">
-                                        <i class="fa fa-angle-right"></i>
-                                        <span>My Account</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="order-tracking.html">
-                                        <i class="fa fa-angle-right"></i>
-                                        <span>Order Delivery</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="wishlist.html">
-                                        <i class="fa fa-angle-right"></i>
-                                        <span>Wishlist</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <i class="fa fa-angle-right"></i>
-                                        <span>Newsletter</span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
+                    	<a></a>
                     </div>
+
+                    <div class="col footer-column-5">
+                         <h4>Service</h4>
+                         <a> 070-555-5555</a>
+                         <a href="noticeList.do">Notice</a> | <a href="">QnA</a>
+                    </div>
+                    
+                    <div class="col footer-column-5">
+                         <h4>Service</h4>
+                         <a> 070-555-5555</a>
+                         <a href="noticeListPaging.do">Notice</a> | <a href="#">QnA</a>
+                    </div>
+                    
+                    
+                    
                 </div>
                 <!-- 카피라이터 -->
                 <div class="row ptb--20">
                     <div class="col-12 text-center">
-                        <p class="copyright-text">Payne &copy; 2019 all rights so-it!</p>
+                        <p class="copyright-text">Payne &copy; 2021all rights so-it!</p>
                         <div class="social space-10">
                             <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer"
                                 class="social__link">
