@@ -16,7 +16,8 @@ public class NoticeSelect implements DBCommand {
 		String id = request.getParameter("bbs_num");
 		NoticeService service = new NoticeServiceImpl();
 		NoticeVO vo = new NoticeVO(); 
-		//vo = service.noticeSelect(Integer.parseInt(id));
+		vo.setBbs_num(Integer.parseInt(id));
+		vo = service.noticeSelect(vo);
 		
 		request.setAttribute("notice", vo);
 		return "notice/noticeSelect.tiles";
