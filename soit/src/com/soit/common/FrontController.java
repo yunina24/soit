@@ -14,8 +14,11 @@ import com.soit.member.web.MemberJoinForm;
 import com.soit.member.web.MemberLogin;
 import com.soit.member.web.MemberLoginForm;
 import com.soit.member.web.MemberLoginOut;
+import com.soit.notice.web.NoticeForm;
+import com.soit.notice.web.NoticeInsert;
 import com.soit.notice.web.NoticeList;
 import com.soit.notice.web.NoticeListPaging;
+import com.soit.notice.web.NoticeSelect;
 
 public class FrontController extends HttpServlet {
 	private HashMap<String, DBCommand> map = new HashMap<>();
@@ -36,6 +39,9 @@ public class FrontController extends HttpServlet {
 		// 게시판
 		map.put("/noticeList.do", new NoticeList());
 		map.put("/noticeListPaging.do", new NoticeListPaging());
+		map.put("/noticeForm.do", new NoticeForm());
+		map.put("/noticeInsert.do", new NoticeInsert());
+		map.put("/noticeSelect.do", new NoticeSelect());
 		
 	}
 

@@ -18,7 +18,7 @@ public class NoticeServiceImpl extends DAO implements NoticeService {
 	public List<NoticeVO> noticeListPaging(int page) {
 		String SQL = "SELECT b.* \r\n" //
 					+ "FROM(SELECT rownum m, a.*\r\n" //
-					+ "     FROM (select * from notice n order by bbs_num)a\r\n" //
+					+ "     FROM (select * from notice n order by up_date)a\r\n" //
 					+ "     )b\r\n" //
 					+ "where b.m between ? and ?";
 
@@ -50,7 +50,7 @@ public class NoticeServiceImpl extends DAO implements NoticeService {
 
 	@Override
 	public List<NoticeVO> noticeSelectList() {
-		String SQL = "SELECT * FROM NOTICE ORDER BY 1";
+		String SQL = "SELECT * FROM NOTICE ORDER BY UP_DATE DESC";
 		List<NoticeVO> list = new ArrayList<>();
 
 		try {
@@ -101,7 +101,7 @@ public class NoticeServiceImpl extends DAO implements NoticeService {
 
 	@Override
 	public int insertNotice(NoticeVO vo) {
-		String SQL = "INSERT INTO NOTICE VALUES(NOTICE_SEQ.NEXTVAL, TITLE=?, CONTENT=?, WRITER=? SYSDATE, 0)";
+		String SQL = "INSERT INTO NOTICE VALUES(NOTICE_SEQ.NEXTVAL, TITLE=?, CONTENT=?, WRITER=?, SYSDATE, 0)";
 		int r = 0;
 		
 		try {

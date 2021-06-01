@@ -18,10 +18,12 @@
                             <div class="header__col header__left">
                                 <a href="index.html" class="logo">
                                     <figure class="logo--normal">
-                                        <img src="${pageContext.request.contextPath }/bootstrap/assets/img/logo/logo.png" alt="Logo">
+                                        <a href="main.do">
+                                        <img src="${pageContext.request.contextPath }/bootstrap/assets/img/logo/logo.png" alt="Logo"></a>
                                     </figure>
                                     <figure class="logo--transparency">
-                                        <img src="${pageContext.request.contextPath }/bootstrap/assets/img/logo/logo.png" alt="Logo">
+                                        <a href="main.do">
+                                        <img src="${pageContext.request.contextPath }/bootstrap/assets/img/logo/logo.png" alt="Logo"></a>
                                     </figure>
                                 </a>
                             </div>

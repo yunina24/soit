@@ -21,28 +21,32 @@
 	}
 </script>
 </head>
-<body>
-	<div align="center">
-		<h2>로그인</h2>
-		<form id="frm" action="memberLogin.do" method="post">
-			<div>
-				<table border="1">
-					<tr>
-						<th>아이디</th>
-						<td><input type="text" id="memberId" name="memberId"></td>
-					</tr>
-					<tr>
-						<th>비밀번호</th>
-						<td><input type="password" id="memberPwd" name="memberPwd"></td>
-					</tr>
-				</table>
-			</div>
-			<div>
-				<button type="button" onclick="formCheck()">로그인</button>
-				<button type="reset">취소</button>
-				<button type="button" onclick="location.href='main.do'">홈</button>
-			</div>
-		</form>
-	</div>
+<body> 
+ 	<div style="width: 100%; text-align: center; padding-top:5%">
+ 		<h3>login</h3><br>
+ 	</div>
+	<div style="width: 100%; text-align: center;">
+	<div style="width: 320px; display: inline-block; padding-bottom: 8%;">
+       <form class="form form--login" id="frm" action="memberLogin.do" method="post">
+          <div class="form__group mb--20">
+              <label style="float:left;" class="form__label" for="username_email"> &nbsp; ID <span class="required">*</span></label>
+              <input type="text" class="form__input" id="memberId" name="memberId">
+          </div>
+          <div class="form__group mb--20">
+             <label style="float:left;" class="form__label" for="login_password"> &nbsp; Password <span class="required">*</span></label>
+              <input type="password" class="form__input" id="memberPwd" name="memberPwd">
+          </div>
+          <div class="d-flex align-items-center mb--20">
+              <div class="form__group mr--30">
+                  <button type="button" class="btn btn-size-sm" onclick="formCheck()" >Login</button>
+              </div><br><br>
+            <div class="form__group mr--30">
+                  <button type="button" class="btn btn-size-sm" onclick="location.href='memberJoinForm.do'">Sign Up</button>
+              </div>
+              <div class="form__group">
+              </div>
+          </div>
+      </form>
+	</div></div>
 </body>
 </html>

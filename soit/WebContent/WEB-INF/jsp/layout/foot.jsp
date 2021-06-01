@@ -27,14 +27,16 @@
                     </div>
 
                     <div class="col footer-column-5">
-                         <h4>Service</h4>
-                         <a> 070-555-5555</a>
-                         <a href="noticeList.do">Notice</a> | <a href="">QnA</a>
+                         <h4>GUIDE</h4>
+                         <a href="">ABOUT US</a> <br>
+                         <a href="">PRIVACY POLICY</a> <br>
+                         <a href="">AGREEMENT</a>
                     </div>
                     
                     <div class="col footer-column-5">
-                         <h4>Service</h4>
+                         <h4>SERVICE</h4>
                          <a> 070-555-5555</a>
+                         <a> www.yedam.com </a> <br>
                          <a href="noticeListPaging.do">Notice</a> | <a href="#">QnA</a>
                     </div>
                     
