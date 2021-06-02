@@ -19,6 +19,7 @@ import com.soit.notice.web.NoticeInsert;
 import com.soit.notice.web.NoticeList;
 import com.soit.notice.web.NoticeListPaging;
 import com.soit.notice.web.NoticeSelect;
+import com.soit.notice.web.NoticeUpdate;
 
 public class FrontController extends HttpServlet {
 	private HashMap<String, DBCommand> map = new HashMap<>();
@@ -26,7 +27,6 @@ public class FrontController extends HttpServlet {
 	@Override
 	public void init() throws ServletException {
 		// 요청페이지, 실행 컨트롤...
-		//map.put("/index.do", new IndexPage());
 		map.put("/main.do", new MainPage());
 
 		// 맴버...
@@ -36,12 +36,14 @@ public class FrontController extends HttpServlet {
 		map.put("/memberLogin.do", new MemberLogin());
 		map.put("/memberLoginOut.do", new MemberLoginOut());
 		
-		// 게시판
+		// 공지사항
 		map.put("/noticeList.do", new NoticeList());
 		map.put("/noticeListPaging.do", new NoticeListPaging());
-		map.put("/noticeForm.do", new NoticeForm());
-		map.put("/noticeInsert.do", new NoticeInsert());
-		map.put("/noticeSelect.do", new NoticeSelect());
+		map.put("/noticeForm.do", new NoticeForm()); // 글쓰기
+		map.put("/noticeSelect.do", new NoticeSelect()); // 글보기
+		map.put("/noticeInsert.do", new NoticeInsert()); // 등록
+		map.put("/noticeUpdate.do", new NoticeUpdate()); // 수정
+		map.put("/noticeDelete.do", new NoticeDelete()); // 삭제
 		
 	}
 
@@ -52,6 +54,7 @@ public class FrontController extends HttpServlet {
 		String uri = req.getRequestURI();
 		String cpath = req.getContextPath();
 		String path = uri.substring(cpath.length());
+		System.out.println(path);
 
 		DBCommand command = map.get(path);
 		String viewPage = command.execute(req, resp);

@@ -19,6 +19,7 @@
 		}
 		frm.submit();
 	}
+	// 중복체크 영역
 	$(function() {
 		$('#idCheck').click(function(){
 			$.ajax({
@@ -89,9 +90,8 @@
 	</div>
 
 
+
 <!-- 
-
-
 <div align="center">
 	<div>
 		<h1>회원가입</h1>
@@ -140,4 +140,4 @@
 			</div>
 		</form>
 	</div>
-</div>  -->
+</div>   -->

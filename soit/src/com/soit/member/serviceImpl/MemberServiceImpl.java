@@ -75,7 +75,7 @@ public class MemberServiceImpl extends DAO implements MemberService {
 
 	@Override
 	public int insertMember(MemberVO vo) {
-		String SQL = "INSERT INTO MEMBER(ID, NAME, PASSWORD, PHONE_NUMBER, ADDRESS) VALUES(?, ?, ?, ?, ?)";
+		String SQL = "INSERT INTO MEMBER VALUES(?, ?, ?, ?, ?)";
 		int r = 0;
 		
 		try {

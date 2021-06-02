@@ -18,7 +18,7 @@ public class NoticeServiceImpl extends DAO implements NoticeService {
 	public List<NoticeVO> noticeListPaging(int page) {
 		String SQL = "SELECT b.* \r\n" //
 					+ "FROM(SELECT rownum m, a.*\r\n" //
-					+ "     FROM (select * from notice n order by up_date)a\r\n" //
+					+ "     FROM (select * from notice n order by up_date DESC )a\r\n" //
 					+ "     )b\r\n" //
 					+ "where b.m between ? and ?";
 
@@ -60,7 +60,6 @@ public class NoticeServiceImpl extends DAO implements NoticeService {
 				NoticeVO vo = new NoticeVO();
 				vo.setBbs_num(rs.getInt("bbs_num"));
 				vo.setTitle(rs.getString("title"));
-				vo.setWriter(rs.getString("writer"));
 				vo.setUp_date(rs.getDate("up_date"));
 				vo.setHit(rs.getInt("hit"));
 				list.add(vo);
@@ -76,20 +75,20 @@ public class NoticeServiceImpl extends DAO implements NoticeService {
 
 	@Override
 	public NoticeVO noticeSelect(NoticeVO vo) {
-		String SQL = "SELECT * FROM NOTICE WHERE BBS_NUM=?";
-
+		String SQL = "SELECT * FROM NOTICE WHERE BBS_NUM=?";		
 		try {
 			psmt = conn.prepareStatement(SQL);
 			psmt.setInt(1, vo.getBbs_num());
 			rs = psmt.executeQuery();
 			if (rs.next()) {
-				hitCount(vo.getBbs_num()); // 해당 아이디로 조회되는 게시글의 조회수 증가
 				vo.setTitle(rs.getString("title"));
 				vo.setContent(rs.getString("content"));
-				vo.setWriter(rs.getString("writer"));
 				vo.setUp_date(rs.getDate("up_date"));
 				vo.setHit(rs.getInt("hit"));
-			}
+				
+				hitCount(vo.getBbs_num()); 
+				// 해당 아이디로 조회되는 게시글의 조회수 증가
+			}	
 
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -101,14 +100,13 @@ public class NoticeServiceImpl extends DAO implements NoticeService {
 
 	@Override
 	public int insertNotice(NoticeVO vo) {
-		String SQL = "INSERT INTO NOTICE VALUES(NOTICE_SEQ.NEXTVAL, TITLE=?, CONTENT=?, WRITER=?, SYSDATE, 0)";
+		String SQL = "INSERT INTO NOTICE(BBS_NUM, TITLE, CONTENT, UP_DATE, HIT) VALUES(NOTICE_SEQ.NEXTVAL, ?, ?, SYSDATE, 0)";
 		int r = 0;
 		
 		try {
 			psmt = conn.prepareStatement(SQL);
 			psmt.setString(1, vo.getTitle());
 			psmt.setString(2, vo.getContent());
-			psmt.setString(3, vo.getWriter());
 			r = psmt.executeUpdate();
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -120,20 +118,31 @@ public class NoticeServiceImpl extends DAO implements NoticeService {
 
 	@Override
 	public int updateNotice(NoticeVO vo) {
-		// TODO Auto-generated method stub
-		return 0;
+		String sql = "update notice set title = ? , content = ? where bbs_num = ?";
+		int n = 0;
+		try {
+			psmt = conn.prepareStatement(sql);
+			psmt.setString(1, vo.getTitle());
+			psmt.setString(2, vo.getContent());
+			psmt.setInt(3, vo.getBbs_num());
+			n = psmt.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+		return n;
 	}
 
 	@Override
 	public int deleteNotice(NoticeVO vo) {
-		String SQL = "UPDATE NOTICE SET TITLE=?, CONTENT=? WHERE BBS_NUM=?";
+		String SQL = "delete from notice where bbs_num=?";
 		int r = 0;
 		
 		try {
 			psmt = conn.prepareStatement(SQL);
-			psmt.setString(1, vo.getTitle());
-			psmt.setString(2, vo.getContent());
-			psmt.setInt(3, vo.getBbs_num());
+			psmt.setInt(1, vo.getBbs_num());
+			
 			r = psmt.executeUpdate();
 		} catch (SQLException e) {
 			e.printStackTrace();

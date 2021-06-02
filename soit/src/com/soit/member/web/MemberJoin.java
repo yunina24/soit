@@ -16,11 +16,11 @@ public class MemberJoin implements DBCommand {
 		// DB에 저장...
 
 		HttpSession session = request.getSession();
-		String id = request.getParameter("memberId");
-		String name = request.getParameter("memberName");
-		String pwd = request.getParameter("memberPwd");
-		String phone = request.getParameter("memberPhone");
-		String addr = request.getParameter("memberAddr");
+		String id = request.getParameter("Id");
+		String name = request.getParameter("Name");
+		String pwd = request.getParameter("Password");
+		String phone = request.getParameter("Phone_number");
+		String addr = request.getParameter("Address");
 
 		MemberVO vo = new MemberVO();
 		vo.setId(id);

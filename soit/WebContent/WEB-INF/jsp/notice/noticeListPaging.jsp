@@ -7,19 +7,13 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <script>
-	function formSubmit(id){
-      frm.id.value = id;
-      frm.submit();
-	}
 	function goPage(page){
 		location.href = "noticeListPaging.do?page=" + page;
 	}
 </script>
 </head>
 <body>
-	<form id = "frm" action="notice.do" method="post">
-		<input type="hidden" id="id" name="id">
-	</form>
+
 	
  	<div style="width: 100%; text-align: center; padding-top:3%">
  		<h3>Notice</h3>
@@ -27,22 +21,24 @@
 			
 	<div align="center">
 		<div style="width:60%"> 
-			<table class="table" border="1">
-				<tr align="center">
-					<th width="5%">no</th>
-					<th width="60%">title</th>
-					<th width="10%">date</th>
-					<th width="5%">hit</th>
+		<table class="table" border="1">
+			<tr align="center">
+				<th width="5%">no</th>
+				<th width="60%">title</th>
+				<th width="10%">date</th>
+				<th width="5%">hit</th>
+			</tr>
+			<c:forEach items="${noticeList }" var="vo">
+			
+				<tr onclick="location.href='noticeSelect.do?bbs_num=${vo.bbs_num}'">
+					<td style="text-align: center;">${vo.bbs_num }</td>
+					<td> ${vo.title }</td>
+					<td style="text-align: center;">${vo.up_date }</td>
+					<td style="text-align: center;">${vo.hit }</td>
 				</tr>
-				<c:forEach items="${noticeList }" var="vo">
-					<tr onclick="formSubmit(${vo.bbs_num })">
-						<td style="text-align: center;">${vo.bbs_num }</td>
-						<td> ${vo.title }</td>
-						<td style="text-align: center;">${vo.up_date }</td>
-						<td style="text-align: center;">${vo.hit }</td>
-					</tr>
-				</c:forEach>
-			</table>
+			</c:forEach>
+		</table>
+
 		</div>
 	</div><br> 
 	
@@ -65,5 +61,7 @@
 			</jsp:include>
 			<!-- 페이징 호출 종료 -->
 		</div>
+
+		
 </body>
 </html>

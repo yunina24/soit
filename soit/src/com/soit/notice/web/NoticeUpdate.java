@@ -8,20 +8,30 @@ import com.soit.notice.service.NoticeService;
 import com.soit.notice.serviceImpl.NoticeServiceImpl;
 import com.soit.notice.vo.NoticeVO;
 
-public class NoticeSelect implements DBCommand {
+public class NoticeUpdate implements DBCommand {
 
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response) {
-		//한건 조회 -> notice.jsp
+		
 		String id = request.getParameter("bbs_num");
-		NoticeVO vo = new NoticeVO(); 
+		String title = request.getParameter("title");
+		String content = request.getParameter("content");
+		NoticeVO vo = new NoticeVO();
 		vo.setBbs_num(Integer.parseInt(id));
+		vo.setTitle(title);
+		vo.setContent(content);
 		
 		NoticeService service = new NoticeServiceImpl();
-		vo = service.noticeSelect(vo);
+		int r = service.updateNotice(vo);
+		String path="";
 		
-		request.setAttribute("notice", vo);
-		return "notice/noticeSelect.tiles";
+		if(r!=0) {
+			path = "/noticeListPaging.do";
+		} else {
+			path = "/notice.do";
+		}
+		
+		return path;
 	}
 
 }

@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -47,9 +48,14 @@
                             </div>
                             <div class="header__col header__right">
                                 <div class="toolbar-item d-none d-lg-block">
-                                    <a href="memberLoginForm.do" class="toolbar-btn">
-                                        <span>Login</span>
-                                    </a>
+                                    	<c:if test="${empty id }">
+                                    		<a href="memberLoginForm.do" class="toolbar-btn">
+                                    		<span>Login</span></a>
+										</c:if>
+										<c:if test="${!empty id }">
+                                   			 <a href="memberLoginOut.do" class="toolbar-btn">
+                                    		<span>Logout</span></a>
+										</c:if>
                                 </div>
                                 <div class="toolbar-item d-block d-lg-none">
                                     <a href="#offcanvasnav" class="hamburger-icon js-toolbar menu-btn">

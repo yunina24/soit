@@ -5,6 +5,7 @@ import java.util.List;
 import com.soit.notice.vo.NoticeVO;
 
 public interface NoticeService {
+	
 	List<NoticeVO> noticeSelectList();
 	NoticeVO noticeSelect(NoticeVO vo);
 	int insertNotice(NoticeVO vo);

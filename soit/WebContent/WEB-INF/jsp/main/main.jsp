@@ -7,6 +7,5 @@
 <title>main.jsp</title>
 </head>
 <body>
-	
 </body>
 </html>

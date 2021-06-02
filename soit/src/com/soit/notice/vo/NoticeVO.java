@@ -6,10 +6,8 @@ public class NoticeVO {
 	private int bbs_num;
 	private String title;
 	private String content;
-	private String writer;
 	private Date up_date;
 	private int hit;
-	
 	
 	public int getBbs_num() {
 		return bbs_num;
@@ -28,12 +26,6 @@ public class NoticeVO {
 	}
 	public void setContent(String content) {
 		this.content = content;
-	}
-	public String getWriter() {
-		return writer;
-	}
-	public void setWriter(String writer) {
-		this.writer = writer;
 	}
 	public Date getUp_date() {
 		return up_date;

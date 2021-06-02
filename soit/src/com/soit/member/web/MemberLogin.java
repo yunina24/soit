@@ -3,6 +3,7 @@ package com.soit.member.web;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import javax.swing.JOptionPane;
 
 import com.soit.common.DBCommand;
 import com.soit.member.serviceImpl.MemberServiceImpl;
@@ -33,7 +34,6 @@ public class MemberLogin implements DBCommand {
 					//회원일 경우...로그인 처리(memberLoninSuccess.jsp)
 					session.setAttribute("id", rvo.getId()); //연결이 끊어질때까지 해당 정보값 가지고 있도록...
 					request.setAttribute("vo", rvo);
-					
 					path = "member/memberLoninSuccess.tiles";
 				}
 				return path;
