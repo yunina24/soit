@@ -9,17 +9,25 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.soit.guide.GuideAboutUs;
+import com.soit.guide.GuideAgreement;
+import com.soit.guide.GuidePrivacyPolicy;
 import com.soit.member.web.MemberJoin;
 import com.soit.member.web.MemberJoinForm;
 import com.soit.member.web.MemberLogin;
 import com.soit.member.web.MemberLoginForm;
 import com.soit.member.web.MemberLoginOut;
+import com.soit.member.web.MemberMyPage;
 import com.soit.notice.web.NoticeForm;
 import com.soit.notice.web.NoticeInsert;
 import com.soit.notice.web.NoticeList;
 import com.soit.notice.web.NoticeListPaging;
 import com.soit.notice.web.NoticeSelect;
 import com.soit.notice.web.NoticeUpdate;
+import com.soit.product.ProductAll;
+import com.soit.product.ProductEarring;
+import com.soit.product.ProductNecklace;
+import com.soit.product.ProductRing;
 
 public class FrontController extends HttpServlet {
 	private HashMap<String, DBCommand> map = new HashMap<>();
@@ -35,6 +43,7 @@ public class FrontController extends HttpServlet {
 		map.put("/memberLoginForm.do", new MemberLoginForm());
 		map.put("/memberLogin.do", new MemberLogin());
 		map.put("/memberLoginOut.do", new MemberLoginOut());
+		map.put("/memberMyPage.do", new MemberMyPage());
 		
 		// 공지사항
 		map.put("/noticeList.do", new NoticeList());
@@ -44,6 +53,17 @@ public class FrontController extends HttpServlet {
 		map.put("/noticeInsert.do", new NoticeInsert()); // 등록
 		map.put("/noticeUpdate.do", new NoticeUpdate()); // 수정
 		map.put("/noticeDelete.do", new NoticeDelete()); // 삭제
+		
+		// guide
+		map.put("/guideAboutUs.do", new GuideAboutUs());
+		map.put("/guidePrivacyPolicy.do", new GuidePrivacyPolicy());
+		map.put("/guideAgreement.do", new GuideAgreement());
+		
+		// product (상품페이지)
+		map.put("/productAll.do", new ProductAll());
+		map.put("/productRing.do", new ProductRing());
+		map.put("/productEarring.do", new ProductEarring());
+		map.put("/productNecklace.do", new ProductNecklace());
 		
 	}
 

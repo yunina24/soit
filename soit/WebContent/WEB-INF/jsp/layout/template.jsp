@@ -16,6 +16,7 @@
     <link rel="shortcut icon" href="${pageContext.request.contextPath }/bootstrap/assets/img/favicon.ico" type="image/x-icon">
     <link rel="apple-touch-icon" href="${pageContext.request.contextPath }/bootstrap/assets/img/icon.png">
     
+    
     <!-- Vendor CSS -->
     <link rel="stylesheet" href="${pageContext.request.contextPath }/bootstrap/assets/css/vendor.css">
 

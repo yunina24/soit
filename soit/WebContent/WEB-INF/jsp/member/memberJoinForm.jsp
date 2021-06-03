@@ -7,11 +7,11 @@
 			alert("아이디를 입력하세요.");
 			frm.memberId.focus();
 			return false;
-		}
+		}/*
 		if(frm.idCheck.value == "unChecked"){
 			alert("아이디 중복체크를 하세요.");
 			return false;
-		}
+		}*/
 		if(frm.memberPwd.value == ""){
 			alert("비밀번호를 입력하세요.");
 			frm.memberPwd.focus();
@@ -69,12 +69,12 @@
 	            </div>	
 	                        
 	            <div class="form__group mb--20">
-	               <label  style="float:left;" class="form__label" for="register_password">phone number <span class="required">*</span></label>
+	               <label  style="float:left;" class="form__label" for="register_password">phone number <span class="required"></span></label>
 	                <input type="text" class="form__input" id="memberPhone" name="memberPhone">
 	            </div>	     
 	                   
 	            <div class="form__group mb--20">
-	               <label  style="float:left;" class="form__label" for="register_password">Address <span class="required">*</span></label>
+	               <label  style="float:left;" class="form__label" for="register_password">Address <span class="required"></span></label>
 	                <input type="text" class="form__input" id="memberAddr" name="memberAddr">
 	            </div>
 	            

@@ -28,9 +28,9 @@
 
                     <div class="col footer-column-5">
                          <h4>GUIDE</h4>
-                         <a href="">ABOUT US</a> <br>
-                         <a href="">PRIVACY POLICY</a> <br>
-                         <a href="">AGREEMENT</a>
+                         <a href="guideAboutUs.do">ABOUT US</a> <br>
+                         <a href="guidePrivacyPolicy.do">PRIVACY POLICY</a> <br>
+                         <a href="guideAgreement.do">AGREEMENT</a>
                     </div>
                     
                     <div class="col footer-column-5">

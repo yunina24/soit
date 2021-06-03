@@ -13,7 +13,7 @@ public class MemberLoginOut implements DBCommand {
 		HttpSession session = request.getSession();
 		session.invalidate();
 		
-		return "main/main.tiles";
+		return "member/memberLoginOut.tiles";
 	}
 
 }

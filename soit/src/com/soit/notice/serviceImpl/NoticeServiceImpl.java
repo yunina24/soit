@@ -18,7 +18,7 @@ public class NoticeServiceImpl extends DAO implements NoticeService {
 	public List<NoticeVO> noticeListPaging(int page) {
 		String SQL = "SELECT b.* \r\n" //
 					+ "FROM(SELECT rownum m, a.*\r\n" //
-					+ "     FROM (select * from notice n order by up_date DESC )a\r\n" //
+					+ "     FROM (select * from notice n order by bbs_num DESC )a\r\n" //
 					+ "     )b\r\n" //
 					+ "where b.m between ? and ?";
 

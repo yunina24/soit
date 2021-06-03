@@ -4,11 +4,9 @@
 <script>
 	// 수정
 	function noticeUpdate() {
-		let id = document.getElementById("cid").value;
 		let title = document.getElementById("ctitle").value;      
 		let content = document.getElementById("ccontent").value;
 		
-		frm.bbs_num.value = id;
 		frm.title.value = title;
 		frm.content.value = content;
 		frm.submit();
@@ -27,7 +25,7 @@
 	<h3>Notice</h3>
 	<!-- 수정 -->
 		<form id="frm" action="noticeUpdate.do" method="post">
-			<input type="hidden" name="bbs_num">
+			<input type="hidden" name="bbs_num" value="${notice.bbs_num }">
 			<input type="hidden" name="title">
 			<input type="hidden" name="content">
 		</form>

@@ -32,16 +32,16 @@
                                 <nav class="main-navigation d-none d-lg-block">
                                     <ul class="mainmenu">
                                         <li class="mainmenu__item menu-item-has-children position-relative">
-                                            <a href="index.html" class="mainmenu__link">All</a>
+                                            <a href="productAll.do" class="mainmenu__link">All</a>
                                         </li>
                                         <li class="mainmenu__item menu-item-has-children position-static">
-                                            <a href="#" class="mainmenu__link">Ring</a>
+                                            <a href="productRing.do" class="mainmenu__link">Ring</a>
                                         </li>
                                         <li class="mainmenu__item menu-item-has-children position-relative">
-                                            <a href="#" class="mainmenu__link">Earring</a>
+                                            <a href="productEarring.do" class="mainmenu__link">Earring</a>
                                         </li>
                                         <li class="mainmenu__item menu-item-has-children position-relative">
-                                            <a href="#" class="mainmenu__link">Necklace</a>
+                                            <a href="productNecklace.do" class="mainmenu__link">Necklace</a>
                                         </li>
                                     </ul>
                                 </nav>
@@ -67,19 +67,21 @@
                                         <span></span>
                                     </a>
                                 </div>
-                                <div class="toolbar-item">
-                                    <a href="wishlist.html" class="toolbar-btn">
-                                        <i class="flaticon-heart"></i>
-                                    </a>
+                                
+                                <!-- myPage -->
+                                <div class="toolbar-item d-none d-lg-block">
+										<c:if test="${!empty id }">
+                                   			 <a href="memberMyPage.do" class="toolbar-btn">
+                                    		<span>my Page</span></a>
+										</c:if>
                                 </div>
+                                
+                                <!-- cart -->
                                 <div class="toolbar-item mini-cart-btn">
                                     <a href="#miniCart" class="toolbar-btn js-toolbar">
-                                        <span class="mini-cart-btn__icon">
+                                    	<c:if test="${!empty id }">
                                             <i class="flaticon-bag"></i>
-                                        </span>
-                                        <sup class="mini-cart-btn__count">
-                                            02
-                                        </sup>
+										</c:if>
                                     </a>
                                 </div>
                             </div>
