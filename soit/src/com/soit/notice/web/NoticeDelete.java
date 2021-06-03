@@ -1,8 +1,9 @@
-package com.soit.common;
+package com.soit.notice.web;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.soit.common.DBCommand;
 import com.soit.notice.service.NoticeService;
 import com.soit.notice.serviceImpl.NoticeServiceImpl;
 import com.soit.notice.vo.NoticeVO;

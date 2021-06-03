@@ -14,15 +14,14 @@
 </head>
 <body>
 
-	
  	<div style="width: 100%; text-align: center; padding-top:3%">
  		<h3>Notice</h3>
  	</div><br>
 			
 	<div align="center">
 		<div style="width:60%"> 
-		<table class="table" border="1">
-			<tr align="center">
+		<table class="table" style="border-bottom: 1px solid silver; border-left: none; border-right: none;">
+			<tr align="center" style="border-bottom: 1px solid silver;  border-top: 1px solid silver; ">
 				<th width="5%">no</th>
 				<th width="60%">title</th>
 				<th width="10%">date</th>
@@ -34,7 +33,7 @@
 					<td style="text-align: center;">${vo.bbs_num }</td>
 					<td> ${vo.title }</td>
 					<td style="text-align: center;">${vo.up_date }</td>
-					<td style="text-align: center;">${vo.hit }</td>
+					<td style="text-align: center; ">${vo.hit }</td>
 				</tr>
 			</c:forEach>
 		</table>

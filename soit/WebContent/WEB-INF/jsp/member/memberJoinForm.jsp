@@ -7,11 +7,11 @@
 			alert("아이디를 입력하세요.");
 			frm.memberId.focus();
 			return false;
-		}/*
+		}
 		if(frm.idCheck.value == "unChecked"){
 			alert("아이디 중복체크를 하세요.");
 			return false;
-		}*/
+		}
 		if(frm.memberPwd.value == ""){
 			alert("비밀번호를 입력하세요.");
 			frm.memberPwd.focus();
@@ -45,7 +45,6 @@
 		});	
 	});
 </script>
-
  	<div style="width: 100%; text-align: center; padding-top:3%">
  		<h3>Register</h3><br> <br>
  	</div>
@@ -54,7 +53,10 @@
 	    <div class="register-box">
 	        <form class="form form--login" id="frm" action="memberJoin.do" method="post">
 	            <div class="form__group mb--20">
-	                <label style="float:left;" class="form__label" for="email"> &nbsp; ID <span class="required">*</span></label>
+	                <label style="float:left;" class="form__label" for="email"> &nbsp; ID <span class="required">*</span>
+	                </label>
+	                	<button style="float:right; border: 0; cutline: 0; background-color: #fff; " 
+	                			type="button" id="idCheck" value="unChecked">✔Check</button>
 	                <input type="text" class="form__input" id="memberId" name="memberId">
 	            </div>
 	            

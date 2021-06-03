@@ -35,7 +35,19 @@ public class MemberJoin implements DBCommand {
 		session.setAttribute("id", id);
 		session.setAttribute("member", vo);
 
-		return "main/main.tiles";
+		
+		
+		String path = "";
+		if(vo == null) { 
+			// 회원 정보 존재하지 않음...(memberLoninFail.jsp)
+			path = "member/memberLoninFail.tiles";
+		} else {
+			//회원일 경우...로그인 처리(memberLoninSuccess.jsp)
+			session.setAttribute("id", vo.getId()); //연결이 끊어질때까지 해당 정보값 가지고 있도록...
+			request.setAttribute("vo", vo);
+			path = "member/memberJoinSuccess.tiles";
+		}
+		return path;
 	}
 
 }

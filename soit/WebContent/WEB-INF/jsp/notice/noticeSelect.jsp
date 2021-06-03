@@ -20,9 +20,14 @@
 	}
 	
 </script>
+
+
     
 <div align="center">
-	<h3>Notice</h3>
+ 	<div style="width: 100%; text-align: center; padding-top:3%">
+ 		<h3>Notice</h3>
+ 	</div><br>
+ 	
 	<!-- 수정 -->
 		<form id="frm" action="noticeUpdate.do" method="post">
 			<input type="hidden" name="bbs_num" value="${notice.bbs_num }">
@@ -34,11 +39,13 @@
 		<input type="hidden" name="did">
 	</form>
 	
-	<table border="1">
-		<tr>
-			<th>순번</th>
-			<td id = "cid">${notice.bbs_num }</td>
-			<th>작성일자</th>
+	
+<div align="center">
+<div style="width:60%"> 
+	<table width="100%" >
+		<tr align="center" >
+			<th id = "cid">${notice.bbs_num }</th>
+			<td>${notice.title }</td>
 			<td>${notice.up_date }</td>
 			<th>조회수</th>
 			<td>${notice.hit }</td>
@@ -59,4 +66,6 @@
 			<button type="button" onclick="noticeDelete()">삭제</button>
 		</c:if>
 	</div>
+</div>
+</div>
 </div>

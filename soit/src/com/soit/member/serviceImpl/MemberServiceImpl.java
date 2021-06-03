@@ -68,9 +68,24 @@ public class MemberServiceImpl extends DAO implements MemberService {
 	}
 
 	@Override
-	public MemberVO selectMember() {
-		// TODO Auto-generated method stub
-		return null;
+	public MemberVO selectMember(MemberVO vo) {
+		String sql = "select * from member where id = ?";
+		try {
+			psmt = conn.prepareStatement(sql);
+			psmt.setString(1, vo.getId());
+			rs = psmt.executeQuery();
+			if (rs.next()) {
+				vo.setId(rs.getString("id"));
+				vo.setName(rs.getString("name"));
+				vo.setPassword(rs.getString("password"));
+				vo.setPhone_number(rs.getString("phone_number"));
+				vo.setAddress(rs.getString("address"));
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+		return vo;
 	}
 
 	@Override
@@ -97,14 +112,42 @@ public class MemberServiceImpl extends DAO implements MemberService {
 
 	@Override
 	public int updateMember(MemberVO vo) {
-		// TODO Auto-generated method stub
-		return 0;
+		String sql = "update member set password = ? , phone_number = ? , address = ? where id = ?"; 
+		int n = 0;
+		
+		try {
+			psmt = conn.prepareStatement(sql);
+			psmt.setString(1, vo.getPassword());
+			psmt.setString(2, vo.getPhone_number());
+			psmt.setString(3, vo.getAddress());
+			psmt.setString(4, vo.getId());
+			n = psmt.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+		return n;	
 	}
 
 	@Override
 	public int deleteMember(MemberVO vo) {
-		// TODO Auto-generated method stub
-		return 0;
+		String sql = "delete from member where id = ? ";
+		int r = 0;
+		
+		try {
+			psmt = conn.prepareStatement(sql);
+			psmt.setString(1, vo.getId());
+			
+			r= psmt.executeUpdate();
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+		
+		return r;
 	}
 	
 	private void close() {

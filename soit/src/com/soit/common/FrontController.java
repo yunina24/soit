@@ -12,12 +12,15 @@ import javax.servlet.http.HttpServletResponse;
 import com.soit.guide.GuideAboutUs;
 import com.soit.guide.GuideAgreement;
 import com.soit.guide.GuidePrivacyPolicy;
+import com.soit.member.web.MemberDelete;
 import com.soit.member.web.MemberJoin;
 import com.soit.member.web.MemberJoinForm;
 import com.soit.member.web.MemberLogin;
 import com.soit.member.web.MemberLoginForm;
 import com.soit.member.web.MemberLoginOut;
 import com.soit.member.web.MemberMyPage;
+import com.soit.member.web.MemberUpdate;
+import com.soit.notice.web.NoticeDelete;
 import com.soit.notice.web.NoticeForm;
 import com.soit.notice.web.NoticeInsert;
 import com.soit.notice.web.NoticeList;
@@ -44,6 +47,8 @@ public class FrontController extends HttpServlet {
 		map.put("/memberLogin.do", new MemberLogin());
 		map.put("/memberLoginOut.do", new MemberLoginOut());
 		map.put("/memberMyPage.do", new MemberMyPage());
+		map.put("/memberUpdate.do", new MemberUpdate());
+		map.put("/memberDelete.do", new MemberDelete());
 		
 		// 공지사항
 		map.put("/noticeList.do", new NoticeList());

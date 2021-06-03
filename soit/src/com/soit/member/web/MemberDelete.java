@@ -9,20 +9,28 @@ import com.soit.member.service.MemberService;
 import com.soit.member.serviceImpl.MemberServiceImpl;
 import com.soit.member.vo.MemberVO;
 
-public class MemberMyPage implements DBCommand {
+public class MemberDelete implements DBCommand {
 
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response) {
 		HttpSession session = request.getSession();
-		String id = (String) session.getAttribute("id");
+		String id = request.getParameter("did");
+		
 		MemberVO vo = new MemberVO();
 		vo.setId(id);
-		
 		MemberService service = new MemberServiceImpl();
-		service.selectMember(vo);
 		
-		request.setAttribute("member", vo);
-		return "member/memberMyPage.tiles";
+		int r = service.deleteMember(vo);
+		String path = "";
+		
+		if(r>0) {
+			path = "main.do";
+			session.invalidate();
+		}else {
+			path = "main.do";
+		}
+		
+		return path;
 	}
 
 }

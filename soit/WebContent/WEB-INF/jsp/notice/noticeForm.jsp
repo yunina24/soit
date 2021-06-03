@@ -14,19 +14,25 @@
 	
 </script>
 <div align="center">
-	<h3>공지사항 내용보기</h3>
+ 	<div style="width: 100%; text-align: center; padding-top:3%">
+ 		<h3>Notice writing</h3>
+ 	</div><br>
+ 	
 	<form id="frm" action="noticeInsert.do" method="post">
 		<input type="hidden" name="title">
 		<input type="hidden" name="content">
 	</form>
-	<table border="1">
-		<tr>
-			<th>제목</th>
-			<td><input type="text" id="ctitle" name="title"></td>
+	
+	<div align="center">
+	<div style="width:60%">
+	<table  class="table" style="width:100%;border-bottom: 1px solid silver; border-left: none; border-right: none;" >
+		<tr style="border-bottom: 1px solid silver;  border-top: 1px solid silver; ">
+			<th font-align="center">제목</th>
+			<td ><input style="border:none; margin-left:10px;" type="text" id="ctitle" name="title"></td>
 		</tr>
 		<tr>
 			<th>내용</th>
-			<td><textarea id ="ccontent" rows="6" cols="90"></textarea></td>
+			<td><textarea style="border:none; resize: none; margin-left:10px;" id ="ccontent" rows="20" cols="130"></textarea></td>
 		</tr>
 	</table>
 	<div>
@@ -34,4 +40,5 @@
 		<button type="button" onclick="noticeInsert()">등록</button>
 		<button type="reset">취소</button>
 	</div>
+	<br><br>
 </div>
