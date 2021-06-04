@@ -33,9 +33,14 @@
 				</tr>
 				<c:forEach items="${qnaList }" var="vo">
 
-					<tr onclick="location.href='noticeSelect.do?bbs_num=${vo.bbs_num}'">
+					<tr onclick="location.href='qnaSelect.do?bbs_num=${vo.bbs_num}'">
 						<td style="text-align: center;">${vo.bbs_num }</td>
-						<td>${vo.title }</td>
+						<c:if test="${vo.upper_num == 0}">
+							<td>${vo.title }</td>
+						</c:if>
+						<c:if test="${vo.upper_num != 0}">
+							<td>&nbsp;&nbsp; └re: ${vo.title }</td>
+						</c:if>
 						<td style="text-align: center;">${vo.writer }</td>
 						<td style="text-align: center;">${vo.up_date }</td>
 						<td style="text-align: center;">${vo.hit }</td>
@@ -49,8 +54,7 @@
 
 	<div style="width: 50%; text-align: center; float: right;">
 		<c:if test="${id eq vo.writer }">
-			<button type="button" class="btn btn-size-sm"
-				onclick="location.href='qnaForm.do'">writing</button>
+			<button type="button" class="btn btn-size-sm" onclick="location.href='qnaForm.do'">writing</button>
 		</c:if>
 	</div>
 

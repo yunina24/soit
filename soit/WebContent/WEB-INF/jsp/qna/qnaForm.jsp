@@ -19,25 +19,19 @@
 	<br>
 
 	<form id="frm" action="qnaInsert.do" method="post">
-		<input type="hidden" name="title"> <input type="hidden"
-			name="content">
+		<input type="hidden" name="title"> <input type="hidden" name="content">
 	</form>
 
 	<div align="center">
 		<div style="width: 60%">
-			<table class="table"
-				style="width: 100%; border-bottom: 1px solid silver; border-left: none; border-right: none;">
-				<tr
-					style="border-bottom: 1px solid silver; border-top: 1px solid silver;">
+			<table class="table" style="width: 100%; border-bottom: 1px solid silver; border-left: none; border-right: none;">
+				<tr style="border-bottom: 1px solid silver; border-top: 1px solid silver;">
 					<th font-align="center">제목</th>
-					<td><input style="border: none; margin-left: 10px;"
-						type="text" id="ctitle" name="title"></td>
+					<td><input style="border: none; margin-left: 10px;" type="text" id="ctitle" name="title"></td>
 				</tr>
 				<tr>
 					<th>내용</th>
-					<td><textarea
-							style="border: none; resize: none; margin-left: 10px;"
-							id="ccontent" rows="20" cols="130"></textarea></td>
+					<td><textarea style="border: none; resize: none; margin-left: 10px;" id="ccontent" rows="20" cols="130"></textarea></td>
 				</tr>
 			</table>
 			<div>

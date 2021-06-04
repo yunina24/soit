@@ -35,7 +35,7 @@ import com.soit.qna.web.QnaDelete;
 import com.soit.qna.web.QnaForm;
 import com.soit.qna.web.QnaInsert;
 import com.soit.qna.web.QnaList;
-import com.soit.qna.web.QnaListPasing;
+import com.soit.qna.web.QnaListPaging;
 import com.soit.qna.web.QnaSelect;
 import com.soit.qna.web.QnaUpdate;
 
@@ -68,7 +68,7 @@ public class FrontController extends HttpServlet {
 		
 		//QnA...
 		map.put("/qnaList.do", new QnaList());
-		map.put("/qnaListPasing.do", new QnaListPasing());
+		map.put("/qnaListPaging.do", new QnaListPaging());
 		map.put("/qnaForm.do", new QnaForm());
 		map.put("/qnaSelect.do", new QnaSelect());
 		map.put("/qnaInsert.do", new QnaInsert()); 

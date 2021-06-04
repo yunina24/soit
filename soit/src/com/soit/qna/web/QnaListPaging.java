@@ -10,7 +10,7 @@ import com.soit.common.Paging;
 import com.soit.qna.serviceImpl.QnaServiceImpl;
 import com.soit.qna.vo.QnaVO;
 
-public class QnaListPasing implements DBCommand {
+public class QnaListPaging implements DBCommand {
 
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response) {

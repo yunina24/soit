@@ -40,9 +40,7 @@
 			</table>
 			<div>
 				<button type="button" onclick="location.href='main.do'">HOME</button>
-				<c:if test="${id eq vo.writer }">
-					<button type="button" onclick="location.href='qnaForm.do'">writing</button>
-				</c:if>
+				<button type="button" onclick="location.href='qnaForm.do'">writing</button>
 			</div>
 		</div>
 	</div>

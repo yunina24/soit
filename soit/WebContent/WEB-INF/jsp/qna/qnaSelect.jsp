@@ -15,8 +15,8 @@
 	function qnaDelete(){
 		let id = document.getElementById("cid").innerHTML;
 		
-		frrm.did.value=id;
-		frrm.submit();
+		frm.did.value=id;
+		frm.submit();
 	}
 	
 </script>
@@ -53,11 +53,11 @@
 		</tr>
 		<tr>
 			<th>제목</th>
-			<td colspan="5"><input id="ctitle" type="text" value="${qna.title }"></td>
+			<td colspan="6"><input id="ctitle" type="text" value="${qna.title }"></td>
 		</tr>
 		<tr>
 			<th>내용</th>
-			<td colspan="5"><textarea id="ccontent" rows="6" cols="90">${qna.content }</textarea></td>
+			<td colspan="6"><textarea id="ccontent" rows="6" cols="90">${qna.content }</textarea></td>
 		</tr>
 	</table>
 	<div>

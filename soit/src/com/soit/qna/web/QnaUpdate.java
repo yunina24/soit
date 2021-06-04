@@ -26,9 +26,9 @@ public class QnaUpdate implements DBCommand {
 		String path = "";
 		
 		if( r != 0) {
-			path = "/qnaListPaging.do";
+			path = "qna/qnaListPaging.do";
 		} else {
-			path = "/qna.do";
+			path = "qna/qna.do";
 		}
 		
 		return path;

@@ -24,9 +24,9 @@ public class QnaInsert implements DBCommand {
 		String path = "";
 		
 		if ( c > 0) {
-			path = "qnaListPaging.do";
+			path = "qna/qnaListPaging.do";
 		} else {
-			path = "qnaForm.do";
+			path = "qna/qnaForm.do";
 		}
 		return path;
 	}

@@ -16,10 +16,14 @@ public class QnaServiceImpl extends DAO implements QnaService{
 
 	// 게시판 페이징 메소드...
 	public List<QnaVO> qnaListPaging(int page) {
-		String SQL = "SELECT b.* \r\n" //
-					+ "FROM(SELECT rownum m, a.*\r\n" //
-					+ "     FROM (select * from qna n order by bbs_num DESC )a\r\n" //
-					+ "     )b\r\n" //
+		String SQL = "SELECT b.*\r\n"//
+					+ "FROM(SELECT rownum m, a.*\r\n"//
+					+ "FROM (SELECT bbs_num, UPPER_NUM, TITLE, WRITER, UP_DATE, HIT\r\n"//
+					+ "FROM QNA\r\n"//
+					+ "START WITH UPPER_NUM = 0\r\n"//
+					+ "CONNECT BY PRIOR bbs_num = UPPER_NUM\r\n"//
+					+ "ORDER SIBLINGS BY GROUP_NO DESC)a\r\n"//
+					+ ")b\r\n"//
 					+ "where b.m between ? and ?";
 
 		List<QnaVO> list = new ArrayList<>();
@@ -36,7 +40,6 @@ public class QnaServiceImpl extends DAO implements QnaService{
 				QnaVO vo = new QnaVO();
 				vo.setBbs_num(rs.getInt("bbs_num"));
 				vo.setTitle(rs.getString("title"));
-				//vo.setContent(rs.getString("content"));
 				vo.setWriter(rs.getString("writer"));
 				vo.setUp_date(rs.getDate("up_date"));
 				vo.setHit(rs.getInt("hit"));
@@ -64,7 +67,7 @@ public class QnaServiceImpl extends DAO implements QnaService{
 				QnaVO vo = new QnaVO();
 				vo.setBbs_num(rs.getInt("bbs_num"));
 				vo.setTitle(rs.getString("title"));
-				vo.setWriter("writer");
+				vo.setWriter(rs.getString("writer"));
 				vo.setUp_date(rs.getDate("up_date"));
 				vo.setHit(rs.getInt("hit"));
 				list.add(vo);
@@ -109,13 +112,13 @@ public class QnaServiceImpl extends DAO implements QnaService{
 		String SQL = "INSERT INTO QNA(BBS_NUM, UPPER_NUM, TITLE, CONTENT, WRITER, UP_DATE, HIT, PRODUCT_CODE, GROUP_NO) VALUES(QNA_SEQ.NEXTVAL, ?, ?, ?, ?, SYSDATE, 0, ?, ?)";
 		int r = 0;
 		
-		int num = vo.getBbs_num();
-		int group = vo.getGroup_no();
-		int upper = vo.getUpper_num();
-
-		if( upper == 0 ) {
-			group = num;
-		}
+//		int num = vo.getBbs_num();
+//		int group = vo.getGroup_no();
+//		int upper = vo.getUpper_num();
+//
+//		if( upper == 0 ) {
+//			group = num;
+//		}
 		
 		try {
 			psmt = conn.prepareStatement(SQL);
@@ -174,7 +177,7 @@ public class QnaServiceImpl extends DAO implements QnaService{
 	
 	// 게시글 클릭시 조회수 증가 메소드...
 	public void hitCount(int id) {
-		String SQL = "UPDATE NOTICE SET HIT = HIT+1 WHERE BBS_NUM=?";
+		String SQL = "UPDATE QNA SET HIT = HIT+1 WHERE BBS_NUM=?";
 
 		try {
 			psmt = conn.prepareStatement(SQL);
