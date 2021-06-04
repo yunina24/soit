@@ -31,6 +31,13 @@ import com.soit.product.ProductAll;
 import com.soit.product.ProductEarring;
 import com.soit.product.ProductNecklace;
 import com.soit.product.ProductRing;
+import com.soit.qna.web.QnaDelete;
+import com.soit.qna.web.QnaForm;
+import com.soit.qna.web.QnaInsert;
+import com.soit.qna.web.QnaList;
+import com.soit.qna.web.QnaListPasing;
+import com.soit.qna.web.QnaSelect;
+import com.soit.qna.web.QnaUpdate;
 
 public class FrontController extends HttpServlet {
 	private HashMap<String, DBCommand> map = new HashMap<>();
@@ -58,6 +65,15 @@ public class FrontController extends HttpServlet {
 		map.put("/noticeInsert.do", new NoticeInsert()); // 등록
 		map.put("/noticeUpdate.do", new NoticeUpdate()); // 수정
 		map.put("/noticeDelete.do", new NoticeDelete()); // 삭제
+		
+		//QnA...
+		map.put("/qnaList.do", new QnaList());
+		map.put("/qnaListPasing.do", new QnaListPasing());
+		map.put("/qnaForm.do", new QnaForm());
+		map.put("/qnaSelect.do", new QnaSelect());
+		map.put("/qnaInsert.do", new QnaInsert()); 
+		map.put("/qnaUpdate.do", new QnaUpdate());
+		map.put("/qnaDelete.do", new QnaDelete());
 		
 		// guide
 		map.put("/guideAboutUs.do", new GuideAboutUs());
