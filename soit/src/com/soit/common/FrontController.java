@@ -57,7 +57,7 @@ public class FrontController extends HttpServlet {
 		map.put("/memberMyPage.do", new MemberMyPage());
 		map.put("/memberUpdate.do", new MemberUpdate());
 		map.put("/memberDelete.do", new MemberDelete());
-		
+
 		// 공지사항
 		map.put("/noticeList.do", new NoticeList());
 		map.put("/noticeListPaging.do", new NoticeListPaging());
@@ -66,19 +66,28 @@ public class FrontController extends HttpServlet {
 		map.put("/noticeInsert.do", new NoticeInsert()); // 등록
 		map.put("/noticeUpdate.do", new NoticeUpdate()); // 수정
 		map.put("/noticeDelete.do", new NoticeDelete()); // 삭제
-		
+
+		// QnA...
+		map.put("/qnaList.do", new QnaList());
+		map.put("/qnaListPaging.do", new QnaListPaging());
+		map.put("/qnaForm.do", new QnaForm());
+		map.put("/qnaSelect.do", new QnaSelect());
+		map.put("/qnaInsert.do", new QnaInsert());
+		map.put("/qnaUpdate.do", new QnaUpdate());
+		map.put("/qnaDelete.do", new QnaDelete());
+
 		// guide
 		map.put("/guideAboutUs.do", new GuideAboutUs());
 		map.put("/guidePrivacyPolicy.do", new GuidePrivacyPolicy());
 		map.put("/guideAgreement.do", new GuideAgreement());
-		
+
 		// product (상품페이지)
 		map.put("/productAll.do", new ProductList());
 		map.put("/productRing.do", new ProductRing());
 		map.put("/productEarring.do", new ProductEarring());
 		map.put("/productNecklace.do", new ProductNecklace());
 		map.put("/productForm.do", new ProductForm());
-		
+
 	}
 
 	@Override
