@@ -109,6 +109,14 @@ public class QnaServiceImpl extends DAO implements QnaService{
 		String SQL = "INSERT INTO QNA(BBS_NUM, UPPER_NUM, TITLE, CONTENT, WRITER, UP_DATE, HIT, PRODUCT_CODE, GROUP_NO) VALUES(QNA_SEQ.NEXTVAL, ?, ?, ?, ?, SYSDATE, 0, ?, ?)";
 		int r = 0;
 		
+		int num = vo.getBbs_num();
+		int group = vo.getGroup_no();
+		int upper = vo.getUpper_num();
+
+		if( upper == 0 ) {
+			group = num;
+		}
+		
 		try {
 			psmt = conn.prepareStatement(SQL);
 			psmt.setInt(1, vo.getUpper_num());
