@@ -19,11 +19,11 @@
                             <div class="header__col header__left">
                                 <a href="index.html" class="logo">
                                     <figure class="logo--normal">
-                                        <a href="main.do">
+                                        <a href="${pageContext.request.contextPath }/main.do">
                                         <img src="${pageContext.request.contextPath }/bootstrap/assets/img/logo/logo.png" alt="Logo"></a>
                                     </figure>
                                     <figure class="logo--transparency">
-                                        <a href="main.do">
+                                        <a href="${pageContext.request.contextPath }/main.do">
                                         <img src="${pageContext.request.contextPath }/bootstrap/assets/img/logo/logo.png" alt="Logo"></a>
                                     </figure>
                                 </a>
@@ -32,16 +32,16 @@
                                 <nav class="main-navigation d-none d-lg-block">
                                     <ul class="mainmenu">
                                         <li class="mainmenu__item menu-item-has-children position-relative">
-                                            <a href="productAll.do" class="mainmenu__link">All</a>
+                                            <a href="${pageContext.request.contextPath }/productAll.do" class="mainmenu__link">All</a>
                                         </li>
                                         <li class="mainmenu__item menu-item-has-children position-static">
-                                            <a href="productRing.do" class="mainmenu__link">Ring</a>
+                                            <a href="${pageContext.request.contextPath }/productRing.do" class="mainmenu__link">Ring</a>
                                         </li>
                                         <li class="mainmenu__item menu-item-has-children position-relative">
-                                            <a href="productEarring.do" class="mainmenu__link">Earring</a>
+                                            <a href="${pageContext.request.contextPath }/productEarring.do" class="mainmenu__link">Earring</a>
                                         </li>
                                         <li class="mainmenu__item menu-item-has-children position-relative">
-                                            <a href="productNecklace.do" class="mainmenu__link">Necklace</a>
+                                            <a href="${pageContext.request.contextPath }/productNecklace.do" class="mainmenu__link">Necklace</a>
                                         </li>
                                     </ul>
                                 </nav>
@@ -49,11 +49,11 @@
                             <div class="header__col header__right">
                                 <div class="toolbar-item d-none d-lg-block">
                                     	<c:if test="${empty id }">
-                                    		<a href="memberLoginForm.do" class="toolbar-btn">
+                                    		<a href="${pageContext.request.contextPath }/memberLoginForm.do" class="toolbar-btn">
                                     		<span>Login</span></a>
 										</c:if>
 										<c:if test="${!empty id }">
-                                   			 <a href="memberLoginOut.do" class="toolbar-btn">
+                                   			 <a href="${pageContext.request.contextPath }/memberLoginOut.do" class="toolbar-btn">
                                     		<span>Logout</span></a>
 										</c:if>
                                 </div>
@@ -71,7 +71,7 @@
                                 <!-- myPage -->
                                 <div class="toolbar-item d-none d-lg-block">
 										<c:if test="${!empty id }">
-                                   			 <a href="memberMyPage.do" class="toolbar-btn">
+                                   			 <a href="${pageContext.request.contextPath }/memberMyPage.do" class="toolbar-btn">
                                     		<span>my Page</span></a>
 										</c:if>
                                 </div>

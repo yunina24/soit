@@ -27,18 +27,17 @@
 	<div style="width:60%">
 	<table  class="table" style="width:100%;border-bottom: 1px solid silver; border-left: none; border-right: none;" >
 		<tr style="border-bottom: 1px solid silver;  border-top: 1px solid silver; ">
-			<th font-align="center">제목</th>
-			<td ><input style="border:none; margin-left:10px;" type="text" id="ctitle" name="title"></td>
+			<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;제목</td>
+			<td><input style="border:none; margin-left:10px;" type="text" id="ctitle" name="title"></td>
 		</tr>
 		<tr>
-			<th>내용</th>
+			<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;내용</td>
 			<td><textarea style="border:none; resize: none; margin-left:10px;" id ="ccontent" rows="20" cols="130"></textarea></td>
 		</tr>
-	</table>
+	</table><br><br>
 	<div>
-		<button type="button" onclick="location.href='noticeListPaging.do'">목록보기</button>
-		<button type="button" onclick="noticeInsert()">등록</button>
-		<button type="reset">취소</button>
+		<button type="button" class="btn btn-size-sm"onclick="noticeInsert()">Save</button>
+		<button type="button" class="btn btn-size-sm"onclick="location.href='noticeListPaging.do'">ListHome</button>
 	</div>
 	<br><br>
 </div>

@@ -27,10 +27,11 @@ import com.soit.notice.web.NoticeList;
 import com.soit.notice.web.NoticeListPaging;
 import com.soit.notice.web.NoticeSelect;
 import com.soit.notice.web.NoticeUpdate;
-import com.soit.product.ProductAll;
-import com.soit.product.ProductEarring;
-import com.soit.product.ProductNecklace;
-import com.soit.product.ProductRing;
+import com.soit.product.web.ProductEarring;
+import com.soit.product.web.ProductNecklace;
+import com.soit.product.web.ProductRing;
+import com.soit.product.webAll.ProductForm;
+import com.soit.product.webAll.ProductList;
 
 public class FrontController extends HttpServlet {
 	private HashMap<String, DBCommand> map = new HashMap<>();
@@ -65,10 +66,11 @@ public class FrontController extends HttpServlet {
 		map.put("/guideAgreement.do", new GuideAgreement());
 		
 		// product (상품페이지)
-		map.put("/productAll.do", new ProductAll());
+		map.put("/productAll.do", new ProductList());
 		map.put("/productRing.do", new ProductRing());
 		map.put("/productEarring.do", new ProductEarring());
 		map.put("/productNecklace.do", new ProductNecklace());
+		map.put("/productForm.do", new ProductForm());
 		
 	}
 

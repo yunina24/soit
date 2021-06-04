@@ -42,30 +42,26 @@
 	
 <div align="center">
 <div style="width:60%"> 
-	<table width="100%" >
-		<tr align="center" >
-			<th id = "cid">${notice.bbs_num }</th>
-			<td>${notice.title }</td>
-			<td>${notice.up_date }</td>
-			<th>조회수</th>
-			<td>${notice.hit }</td>
-		</tr>
-		<tr>
-			<th>제목</th>
-			<td colspan="5"><input id="ctitle" type="text" value="${notice.title }"></td>
+	<table class="table" style="width:100%;border-bottom: 1px solid silver; border-left: none; border-right: none;"  >
+		<tr style="border-bottom: 1px solid silver;  border-top: 1px solid silver; ">
+			<td id = "cid" > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;${notice.bbs_num }</td>
+			<td style="width:75%">${notice.title }</td>
+			<td style="width:40px;">${notice.up_date }</td>
+			<td style="width:30px;"> Hit&nbsp;${notice.hit }</td>
 		</tr>
 		<tr>
 			<th>내용</th>
-			<td colspan="5"><textarea id="ccontent" rows="6" cols="90">${notice.content }</textarea></td>
+			<td colspan="5"><textarea style="border:none; resize: none; margin-left:10px;" id ="ccontent" rows="20" cols="130"
+									id="ccontent" rows="6" cols="90">${notice.content }</textarea></td>
 		</tr>
-	</table>
+	</table> <br><br>
 	<div>
-		<button type="button" onclick="location.href='noticeListPaging.do'">목록보기</button>
+		<button type="button" class="btn btn-size-sm"onclick="location.href='noticeListPaging.do'">ListHome</button>
 		<c:if test="${id eq 'admin' }">
-			<button type="button" onclick="noticeUpdate()">수정</button>
-			<button type="button" onclick="noticeDelete()">삭제</button>
+		<button type="button" class="btn btn-size-sm"onclick="noticeUpdate()">Update</button>
+		<button type="button" class="btn btn-size-sm"onclick="noticeDelete()">Delete</button>
 		</c:if>
-	</div>
+	</div><br><br>
 </div>
 </div>
 </div>
