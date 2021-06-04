@@ -35,10 +35,10 @@
 
 					<tr onclick="location.href='qnaSelect.do?bbs_num=${vo.bbs_num}'">
 						<td style="text-align: center;">${vo.bbs_num }</td>
-						<c:if test="${vo.upper_num == 0}">
+						<c:if test="${vo.upper_num eq 0}">
 							<td>${vo.title }</td>
 						</c:if>
-						<c:if test="${vo.upper_num != 0}">
+						<c:if test="${vo.upper_num ne 0}">
 							<td>&nbsp;&nbsp; └re: ${vo.title }</td>
 						</c:if>
 						<td style="text-align: center;">${vo.writer }</td>

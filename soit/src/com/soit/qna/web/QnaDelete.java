@@ -22,9 +22,9 @@ public class QnaDelete implements DBCommand {
 		String path = "";
 		
 		if(r>0) {
-			path = "qna/qnaListPaging.do";
+			path = "qna/qnaListPaging.tiles";
 		}else {
-			path = "qna/qna.do";
+			path = "qna/qna.tiles";
 		}
 		
 		return path;
