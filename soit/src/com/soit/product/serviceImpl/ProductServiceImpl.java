@@ -18,7 +18,7 @@ public class ProductServiceImpl extends DAO implements ProductService {
 	
 	@Override
 	public List<ProductVO> ProductSelectList() {
-		sql = "select * from product order by 1";
+		sql = "select * from product order by 1 DESC";
 		List<ProductVO> list = new ArrayList<>();
 		try {
 			psmt = conn.prepareStatement(sql);
@@ -26,7 +26,6 @@ public class ProductServiceImpl extends DAO implements ProductService {
 			while(rs.next()) {
 				ProductVO vo = new ProductVO();
 				vo.setProductNum(rs.getInt("PRODUCT_NUM"));
-				vo.setProductCode(rs.getString("PRODUCT_CODE"));
 				vo.setProductName(rs.getString("PRODUCT_NAME"));
 				vo.setProductDivision(rs.getString("PRODUCT_DIVISION"));
 				vo.setProductImage(rs.getString("PRODUCT_IMAGE"));
@@ -58,7 +57,6 @@ public class ProductServiceImpl extends DAO implements ProductService {
 		
 		try {
 			psmt = conn.prepareStatement(sql);
-			psmt.setString(1, vo.getProductCode());
 			psmt.setString(2, vo.getProductName());
 			psmt.setString(3, vo.getProductDivision());
 			psmt.setString(4, vo.getProductImage());
