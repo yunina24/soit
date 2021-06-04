@@ -8,7 +8,7 @@
 <script>
 	$(function(){
 		CKEDITOR.replace('content',{
-			filebrowserUploadUrl: '${pageContext.request.contextPath }/upload',
+			filebrowserUploadUrl: '${pageContext.request.contextPath }/fileUpload',
 			height: '600px',
 			width: '800px'
 		});
