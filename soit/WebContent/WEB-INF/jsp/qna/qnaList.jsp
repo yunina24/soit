@@ -31,7 +31,12 @@
 				<c:forEach items="${qnaList }" var="vo">
 					<tr onclick="formSubmit(${vo.bbs_num })">
 						<td>${vo.bbs_num }</td>
-						<td>${vo.title }</td>
+						<c:if test="${vo.upper_num == 0}">
+							<td>${vo.title }</td>
+						</c:if>
+						<c:if test="${vo.upper_num > 0}">
+							<td>&nbsp;&nbsp; └re: ${vo.title }</td>
+						</c:if>
 						<td>${vo.writer }</td>
 						<td>${vo.up_date }</td>
 						<td>${vo.hit }</td>

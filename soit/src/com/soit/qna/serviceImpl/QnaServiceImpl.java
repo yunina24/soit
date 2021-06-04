@@ -140,10 +140,10 @@ public class QnaServiceImpl extends DAO implements QnaService{
 
 	@Override
 	public int updateQna(QnaVO vo) {
-		String sql = "UPDATE QNA SET TITLE=? , CONTENT=? WHERE BBS_NUM=?";
+		String SQL = "UPDATE QNA SET TITLE=?, CONTENT=? WHERE BBS_NUM=?";
 		int n = 0;
 		try {
-			psmt = conn.prepareStatement(sql);
+			psmt = conn.prepareStatement(SQL);
 			psmt.setString(1, vo.getTitle());
 			psmt.setString(2, vo.getContent());
 			psmt.setInt(3, vo.getBbs_num());
