@@ -32,6 +32,13 @@ import com.soit.product.web.ProductNecklace;
 import com.soit.product.web.ProductRing;
 import com.soit.product.webAll.ProductForm;
 import com.soit.product.webAll.ProductList;
+import com.soit.qna.web.QnaDelete;
+import com.soit.qna.web.QnaForm;
+import com.soit.qna.web.QnaInsert;
+import com.soit.qna.web.QnaList;
+import com.soit.qna.web.QnaListPaging;
+import com.soit.qna.web.QnaSelect;
+import com.soit.qna.web.QnaUpdate;
 
 public class FrontController extends HttpServlet {
 	private HashMap<String, DBCommand> map = new HashMap<>();

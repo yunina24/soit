@@ -37,7 +37,7 @@
                          <h4>SERVICE</h4>
                          <a> 070-555-5555</a>
                          <a> www.yedam.com </a> <br>
-                         <a href="noticeListPaging.do">Notice</a> | <a href="#">QnA</a>
+                         <a href="noticeListPaging.do">Notice</a> | <a href="qnaListPaging.do">QnA</a>
                     </div>
                     
                     
