@@ -2,7 +2,6 @@ package com.soit.product.vo;
 
 public class ProductVO {
 	private int productNum;
-	private String productCode;
 	private String productName;
 	private String productDivision;
 	private String productImage;
@@ -16,12 +15,6 @@ public class ProductVO {
 	}
 	public void setProductNum(int productNum) {
 		this.productNum = productNum;
-	}
-	public String getProductCode() {
-		return productCode;
-	}
-	public void setProductCode(String productCode) {
-		this.productCode = productCode;
 	}
 	public String getProductName() {
 		return productName;

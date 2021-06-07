@@ -12,7 +12,6 @@ public class ProductInsert implements DBCommand {
 
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response) {
-		String code = request.getParameter("productCode");
 		String name = request.getParameter("productName");
 		String division = request.getParameter("productDivision");
 		String image = request.getParameter("productImage");
@@ -25,7 +24,6 @@ public class ProductInsert implements DBCommand {
 		
 		ProductVO vo = new ProductVO();
 		
-		vo.setProductCode(code);
 		vo.setProductName(name);
 		vo.setProductDivision(division);
 		vo.setProductImage(image);
