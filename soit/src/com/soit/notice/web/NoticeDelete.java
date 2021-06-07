@@ -13,6 +13,7 @@ public class NoticeDelete implements DBCommand {
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response) {
 		String id = request.getParameter("did");
+		
 		NoticeVO vo = new NoticeVO();
 		vo.setBbs_num(Integer.parseInt(id));
 		NoticeService service = new NoticeServiceImpl();
