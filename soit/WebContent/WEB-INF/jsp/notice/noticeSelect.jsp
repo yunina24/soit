@@ -4,8 +4,8 @@
 <script>
 	// 수정
 	function noticeUpdate() {
-		let title = document.getElementById("ctitle").value;      
-		let content = document.getElementById("ccontent").value;
+		let title = document.getElementById("title").value;      
+		let content = document.getElementById("content").value;
 		
 		frm.title.value = title;
 		frm.content.value = content;
@@ -13,7 +13,7 @@
 	}
 	// 삭제
 	function noticeDelete(){
-		let id = document.getElementById("cid").innerHTML;
+		let id = document.getElementById("did").innerHTML;
 		
 		frrm.did.value=id;
 		frrm.submit();

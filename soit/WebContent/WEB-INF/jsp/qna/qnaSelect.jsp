@@ -4,8 +4,8 @@
 <script>
 	// 수정
 	function qnaUpdate() {
-		let title = document.getElementById("ctitle").value;
-		let content = document.getElementById("ccontent").value;
+		let title = document.getElementById("title").value;
+		let content = document.getElementById("content").value;
 
 		frm.title.value = title;
 		frm.content.value = content;
@@ -13,10 +13,10 @@
 	}
 	// 삭제
 	function qnaDelete() {
-		let id = document.getElementById("cid").innerHTML;
+		let id = document.getElementById("did").innerHTML;
 
-		frm.did.value = id;
-		frm.submit();
+		frrm.did.value = id;
+		frrm.submit();
 	}
 </script>
 
