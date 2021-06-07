@@ -47,15 +47,13 @@
 					</tr>
 				</c:forEach>
 			</table>
-
+			
 		</div>
 	</div>
 	<br>
 
 	<div style="width: 50%; text-align: center; float: right;">
-		<c:if test="${id eq vo.writer }">
-			<button type="button" class="btn btn-size-sm" onclick="location.href='qnaForm.do'">writing</button>
-		</c:if>
+		<button type="button" class="btn btn-size-sm" onclick="location.href='qnaForm.do'">writing</button>
 	</div>
 
 	<div style="width: 100%; text-align: center; padding: 3%">

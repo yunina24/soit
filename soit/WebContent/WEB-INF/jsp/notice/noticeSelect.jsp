@@ -44,7 +44,7 @@
 <div style="width:60%"> 
 	<table class="table" style="width:100%;border-bottom: 1px solid silver; border-left: none; border-right: none;"  >
 		<tr style="border-bottom: 1px solid silver;  border-top: 1px solid silver; ">
-			<td id = "cid" > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;${notice.bbs_num }</td>
+			<td id = "cid" > ${notice.bbs_num }</td>
 			<td style="width:75%">${notice.title }</td>
 			<td style="width:40px;">${notice.up_date }</td>
 			<td style="width:30px;"> Hit&nbsp;${notice.hit }</td>
