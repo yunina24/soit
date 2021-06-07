@@ -19,7 +19,7 @@
 }
 
 .pagination a.active {
-  background-color: #4CAF50;
+  background-color: #7f8085;
   color: white;
 }
 

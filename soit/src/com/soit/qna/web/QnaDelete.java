@@ -24,7 +24,7 @@ public class QnaDelete implements DBCommand {
 		if(r>0) {
 			path = "qna/qnaListPaging.tiles";
 		}else {
-			path = "qna/qna.tiles";
+			path = "qna/qnaListPaging.tiles";
 		}
 		
 		return path;
