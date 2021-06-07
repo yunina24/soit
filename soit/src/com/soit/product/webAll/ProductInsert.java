@@ -17,7 +17,7 @@ public class ProductInsert implements DBCommand {
 		String image = request.getParameter("productImage");
 		String desc = request.getParameter("productDesc");
 		String price = request.getParameter("productPrice");
-		String scope = request.getParameter("productscope");
+		String scope = request.getParameter("productScope");
 		
 		int p = Integer.parseInt(price);
 		int s = Integer.parseInt(scope);
@@ -34,7 +34,7 @@ public class ProductInsert implements DBCommand {
 		ProductService service = new ProductServiceImpl();
 		int c = service.insertProduct(vo);
 		
-		return "product/productInsert.tiles";
+		return "productAll.do";
 	}
 
 }

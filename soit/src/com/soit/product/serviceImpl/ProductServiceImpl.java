@@ -43,26 +43,46 @@ public class ProductServiceImpl extends DAO implements ProductService {
 		
 		return list;
 	}
-
+	
 	@Override
 	public ProductVO ProductSelect(ProductVO vo) {
-		// TODO Auto-generated method stub
-		return null;
+		String sql = "SELECT * FROM PRODUCT WHERE PRODUCT_NUM = ? ";
+		
+		try {
+			psmt = conn.prepareStatement(sql);
+			psmt.setInt(1, vo.getProductNum());
+			rs = psmt.executeQuery();
+			if (rs.next()) {
+				vo.setProductNum(rs.getInt("PRODUCT_NUM"));
+				vo.setProductName(rs.getString("PRODUCT_NAME"));
+				vo.setProductDivision(rs.getString("PRODUCT_DIVISION"));
+				vo.setProductImage(rs.getString("PRODUCT_IMAGE"));
+				vo.setProductDesc(rs.getString("PRODUCT_DESC"));
+				vo.setPrice(rs.getInt("PRICE"));
+				vo.setScope(rs.getInt("SCOPE"));
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+		
+		return vo;
 	}
 
 	@Override
 	public int insertProduct(ProductVO vo) {
-		String sql = "insert into product values(product_seq.nextval, ? ,? ,? ,? ,? ,? ,?)";
+		String sql = "insert into product values(product_seq.nextval, ? ,? ,? ,? ,? ,?)";
 		int r = 0;
 		
 		try {
 			psmt = conn.prepareStatement(sql);
-			psmt.setString(2, vo.getProductName());
-			psmt.setString(3, vo.getProductDivision());
-			psmt.setString(4, vo.getProductImage());
-			psmt.setString(5, vo.getProductDesc());
-			psmt.setInt(6, vo.getPrice());
-			psmt.setInt(7, vo.getScope());
+			psmt.setString(1, vo.getProductName());
+			psmt.setString(2, vo.getProductDivision());
+			psmt.setString(3, vo.getProductImage());
+			psmt.setString(4, vo.getProductDesc());
+			psmt.setInt(5, vo.getPrice());
+			psmt.setInt(6, vo.getScope());
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally {
@@ -74,14 +94,25 @@ public class ProductServiceImpl extends DAO implements ProductService {
 
 	@Override
 	public int updateProduct(ProductVO vo) {
-		// TODO Auto-generated method stub
 		return 0;
 	}
 
 	@Override
 	public int deleteProduct(ProductVO vo) {
-		// TODO Auto-generated method stub
-		return 0;
+		String sql = "delete from product where product_num=?";
+		int r = 0;
+		
+		try {
+			psmt = conn.prepareStatement(sql);
+			psmt.setInt(1, vo.getProductNum());
+			r = psmt.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+		
+		return r;
 	}
 
 	public void close() {
@@ -108,4 +139,91 @@ public class ProductServiceImpl extends DAO implements ProductService {
 			}
 		}
 	}
+
+	
+
+	@Override // ring 조회 
+	public List<ProductVO> ProductRingList() {
+		sql = "SELECT * FROM PRODUCT WHERE PRODUCT_DIVISION = 'RING' ORDER BY 1 DESC";
+		List<ProductVO> list = new ArrayList<>();
+		try {
+			psmt = conn.prepareStatement(sql);
+			rs = psmt.executeQuery();
+			while(rs.next()) {
+				ProductVO vo = new ProductVO();
+				vo.setProductNum(rs.getInt("PRODUCT_NUM"));
+				vo.setProductName(rs.getString("PRODUCT_NAME"));
+				vo.setProductDivision(rs.getString("PRODUCT_DIVISION"));
+				vo.setProductImage(rs.getString("PRODUCT_IMAGE"));
+				vo.setProductDesc(rs.getString("PRODUCT_DESC"));
+				vo.setPrice(rs.getInt("PRICE"));
+				vo.setScope(rs.getInt("SCOPE"));
+				
+				list.add(vo);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+		
+		return list;
+	}
+
+	@Override
+	public List<ProductVO> ProductEarringList() {
+		sql = "SELECT * FROM PRODUCT WHERE PRODUCT_DIVISION = 'EARR' ORDER BY 1 DESC";
+		List<ProductVO> list = new ArrayList<>();
+		try {
+			psmt = conn.prepareStatement(sql);
+			rs = psmt.executeQuery();
+			while(rs.next()) {
+				ProductVO vo = new ProductVO();
+				vo.setProductNum(rs.getInt("PRODUCT_NUM"));
+				vo.setProductName(rs.getString("PRODUCT_NAME"));
+				vo.setProductDivision(rs.getString("PRODUCT_DIVISION"));
+				vo.setProductImage(rs.getString("PRODUCT_IMAGE"));
+				vo.setProductDesc(rs.getString("PRODUCT_DESC"));
+				vo.setPrice(rs.getInt("PRICE"));
+				vo.setScope(rs.getInt("SCOPE"));
+				
+				list.add(vo);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+		
+		return list;
+	}
+
+	@Override
+	public List<ProductVO> ProductNecklaceList() {
+		sql = "SELECT * FROM PRODUCT WHERE PRODUCT_DIVISION = 'NECT' ORDER BY 1 DESC";
+		List<ProductVO> list = new ArrayList<>();
+		try {
+			psmt = conn.prepareStatement(sql);
+			rs = psmt.executeQuery();
+			while(rs.next()) {
+				ProductVO vo = new ProductVO();
+				vo.setProductNum(rs.getInt("PRODUCT_NUM"));
+				vo.setProductName(rs.getString("PRODUCT_NAME"));
+				vo.setProductDivision(rs.getString("PRODUCT_DIVISION"));
+				vo.setProductImage(rs.getString("PRODUCT_IMAGE"));
+				vo.setProductDesc(rs.getString("PRODUCT_DESC"));
+				vo.setPrice(rs.getInt("PRICE"));
+				vo.setScope(rs.getInt("SCOPE"));
+				
+				list.add(vo);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+		
+		return list;
+	}
+	
 }

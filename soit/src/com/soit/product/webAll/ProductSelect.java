@@ -1,6 +1,4 @@
-package com.soit.product.web;
-
-import java.util.List;
+package com.soit.product.webAll;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -10,16 +8,20 @@ import com.soit.product.service.ProductService;
 import com.soit.product.serviceImpl.ProductServiceImpl;
 import com.soit.product.vo.ProductVO;
 
-public class ProductNecklace implements DBCommand {
+public class ProductSelect implements DBCommand {
 
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response) {
 
-		ProductService service = new ProductServiceImpl();
-		List<ProductVO> list = service.ProductNecklaceList();
-		request.setAttribute("product", list);
+		String num = request.getParameter("ProductNum");
+		ProductVO vo = new ProductVO();
+		vo.setProductNum(Integer.parseInt(num));
 		
-		return "product/necklace.tiles";
+		ProductService service = new ProductServiceImpl();
+		vo = service.ProductSelect(vo);
+		
+		request.setAttribute("product", vo);	
+		return "product/productSelect.tiles";
 	}
 
 }

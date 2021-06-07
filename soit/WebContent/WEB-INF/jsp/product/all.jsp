@@ -35,7 +35,8 @@
                         <div class="product__inner">
                             <div class="product__image">
                                 <figure class="product__image--holder">
-                                    <img src="upload/${product.productImage }" alt="Product">
+                                    <a href = "productSelect.do?ProductNum=${product.productNum }">
+                                    <img src="upload/${product.productImage }" alt="Product"></a>
                                 </figure>
                                 <a href="product-details.html" class="product-overlay"></a>
 
@@ -46,8 +47,7 @@
                                         <a href="product-details.html">${product.productName }</a>
                                     </h3>
                                     <div class="product__price">
-                                        <span class="money">${product.price }</span>
-                                        <span class="sign">$</span>
+                                        <span class="money">&#8361; ${product.price }</span>
                                     </div>
                                 </div>
                             </div>

@@ -13,8 +13,12 @@
 			width: '800px'
 		});
 	})
-	
 </script>
+
+
+<form id="frm" action="noticeInsert.do" method="post">
+	<input type="hidden" name="productScope" value="5">
+</form>
 
 <div align="center">
  	<div style="width: 100%; text-align: center; padding-top:3%">
@@ -23,32 +27,32 @@
  	
 	<div align = "center">
 		<form id="frm" action="productInsert.do" method="post">
-		<input type = "hidden" name="id" value="${id }">
-		<input type = "hidden" name="uname" value="${uname }">
 			<div>
 				<table>
 					<tr>
-						<td width="670"><input style="border:0;" type="text" id="title" class="proName" name="title" value="Produck-name"></td>
+						<td width="470"><input style="border:0;" type="text" name="productName" value="Produck-name" onFocus="this.value='';return true;"></td>
+						<td><input style="border:0;" type="text" name="productPrice" value="Price" onFocus="this.value='';return true;"></td>
 						<td>
-							<select name="division" >
+							<select name="productDivision" >
 							<option value=" ">= DIVISION =</option>
-							<option value="A">RING</option>
-							<option value="B">EARRING</option>
-							<option value="C">NECTLACE</option>	 
+							<option value="RING">RING</option>
+							<option value="EARRING">EARRING</option>
+							<option value="NECTLACE">NECTLACE</option>	 
 							</select>
 						</td>
 					</tr>
+				</table>
+				<table>
 					<tr>
-						<td colspan="3" ><textarea id ="content" name="content"></textarea>
+						<td colspan="4" ><textarea id ="content" name="productDesc"></textarea>
 						</td>
 					</tr>
 				</table>
-			</div>
-			<div>
-				<button type="button" onclick="formCheck()">등록</button>
-				<button type="reset">취소</button>
-				<button type="button" onclick="location.href='main.do'">목록보기</button>
-			</div>
+			</div> <br>
 		</form>
+			<div>
+				<button type="button" class="btn btn-size-sm" onclick="location.href='productInsert.do'">SAVE</button>
+				<button type="button" class="btn btn-size-sm" onclick="location.href='productAll.do'">ListHome</button>
+			</div><br>
 	</div>
 	</div>

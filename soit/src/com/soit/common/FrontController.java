@@ -31,7 +31,9 @@ import com.soit.product.web.ProductEarring;
 import com.soit.product.web.ProductNecklace;
 import com.soit.product.web.ProductRing;
 import com.soit.product.webAll.ProductForm;
+import com.soit.product.webAll.ProductInsert;
 import com.soit.product.webAll.ProductList;
+import com.soit.product.webAll.ProductSelect;
 import com.soit.qna.web.QnaDelete;
 import com.soit.qna.web.QnaForm;
 import com.soit.qna.web.QnaInsert;
@@ -87,6 +89,8 @@ public class FrontController extends HttpServlet {
 		map.put("/productEarring.do", new ProductEarring());
 		map.put("/productNecklace.do", new ProductNecklace());
 		map.put("/productForm.do", new ProductForm());
+		map.put("/productSelect.do", new ProductSelect());
+		map.put("/productInsert.do", new ProductInsert());
 
 	}
 
